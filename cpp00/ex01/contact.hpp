@@ -4,16 +4,20 @@
 class Contact{
 private:
 	int			Index;
-	// std::string FirstName;
-	// std::string LastName;
-	// std::string Nickname;
-	// std::string PhoneNumber;
-	// std::string DarkestSecret;
+	std::string FirstName;
+	std::string LastName;
+	std::string Nickname;
+	std::string PhoneNumber;
+	std::string DarkestSecret;
 public:
 	Contact();
 	~Contact();
-	void	getIndex(int i);
-	void	init(void);
+	void		getIndex(int i);
+	std::string	requestInput(std::string s);
+	void		init(void);
+	std::string	printName(std::string s);
+	void		view(void);
+	void		info(void);
 };
 
 #endif

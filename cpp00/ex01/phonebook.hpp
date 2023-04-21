@@ -6,14 +6,14 @@
 class Phonebook{
 private:
 	Contact contact[8];
-	// int		index;
 public:
 	Phonebook();
 	~Phonebook();
 	void 	init(void);
-	void 	view(void);
 	void	add(void);
+	int 	requestIndex(std::string s);
 	void 	search(void);
+	void 	print(void);
 };
 
 #endif

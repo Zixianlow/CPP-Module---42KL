@@ -15,7 +15,7 @@ int main()
 			Pbook.add();
 		else if (!input.compare("SEARCH"))
 		{
-			Pbook.view();
+			Pbook.print();
 			Pbook.search();
 		}
 		std::cout << ">";
