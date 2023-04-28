@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:14:06 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/22 19:05:50 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:42:31 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main(int ac, char **av)
 		std::cout << "Invalid parameters count!!!" << std::endl;
 		return 1;
 	}
+	std::string find = av[2];
+	std::string replace = av[3];
 	std::ifstream infile(av[1]);
 	if (!infile)
 	{
@@ -54,7 +56,7 @@ int main(int ac, char **av)
 		std::string line;
     	while (std::getline(infile, line))
 		{
-			ft_find_n_replace(line, av[2], av[3]);
+			ft_find_n_replace(line, find, replace);
 			outfile << line << std::endl;
 		}
 	}
