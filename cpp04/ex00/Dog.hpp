@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 16:28:21 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/05 19:21:37 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "Weapon.hpp"
+#include "Animal.hpp"
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
+class Dog : public Animal{
 public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
+	Dog();
+	~Dog();
+
+	void	makeSound() const;
 };
 
 #endif

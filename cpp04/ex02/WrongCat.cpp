@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 16:25:10 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/06 13:57:19 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#include "WrongCat.hpp"
 
-#include "Weapon.hpp"
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
+{
+	std::cout << "WrongCat class is constructed." << std::endl;
+}
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
-public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
-};
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat class is destructed." << std::endl;
+}
 
-#endif
+void	WrongCat::makeSound() const
+{
+	std::cout << "Animal making sound, Woooof~~~" << std::endl;
+}

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 16:25:10 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/05 19:22:28 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#include "Cat.hpp"
 
-#include "Weapon.hpp"
+Cat::Cat() : Animal("Cat")
+{
+	std::cout << "Cat class is constructed." << std::endl;
+}
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
-public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
-};
+Cat::~Cat()
+{
+	std::cout << "Cat class is destructed." << std::endl;
+}
 
-#endif
+void	Cat::makeSound() const
+{
+	std::cout << "Animal making sound, Meowwww~~~" << std::endl;
+}

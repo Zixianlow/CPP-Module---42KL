@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 15:44:56 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/06 16:21:55 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Weapon.hpp"
+#include <iostream>
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
+class Animal{
+protected:
+	std::string 	type;
 public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
+	Animal();
+	Animal(std::string type);
+	Animal(const Animal &copy);
+	Animal& operator=(const Animal &copy);
+	virtual ~Animal();
+	
+	virtual std::string getType() const;
+	virtual void	makeSound() const;
 };
 
 #endif

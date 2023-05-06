@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 16:27:14 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/05 19:58:46 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#include "Dog.hpp"
 
-#include "Weapon.hpp"
+Dog::Dog() : Animal("Dog")
+{
+	std::cout << "Dog class is constructed." << std::endl;
+}
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
-public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
-};
+Dog::~Dog()
+{
+	std::cout << "Dog class is destructed." << std::endl;
+}
 
-#endif
+void	Dog::makeSound() const
+{
+	std::cout << "Animal making sound, Wooooof~~~" << std::endl;
+}

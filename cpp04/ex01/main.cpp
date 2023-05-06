@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 14:17:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:18 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/03 15:43:19 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/06 15:37:37 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-#include "Weapon.hpp"
+int main()
+{
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	delete j;
+	delete i;
 
-class HumanA{
-private:
-	std::string name;
-	Weapon		*weapon;
-public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
-};
-
-#endif
+	std::cout << "------------------------------" << std::endl;
+	const Animal* arr[4]; 
+	arr[0] = new Cat();
+	arr[1] = new Cat();
+	arr[2] = new Dog();
+	arr[3] = new Dog();
+	delete arr[0];
+	delete arr[1];
+	delete arr[2];
+	delete arr[3];
+	return 0;
+}
