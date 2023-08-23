@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/08/19 20:42:09 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/08/23 17:11:20 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Bureaucrat.hpp"
+#include "Intern.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : virtual public Animal{
-private:
-	Brain *brain;
-public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
-};
-
-#endif
+int main()
+{
+	Intern someRandomIntern;
+	Form* rrf;
+	
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	std::cout << *rrf << std::endl;
+}

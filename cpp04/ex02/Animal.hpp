@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:44:56 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/06 16:21:55 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:18:24 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
 	Animal& operator=(const Animal &copy);
 	virtual ~Animal();
 	
-	virtual std::string getType() const;
-	virtual void	makeSound() const;
+	std::string getType() const;
+	virtual void	makeSound() const = 0;
 };
 
 #endif

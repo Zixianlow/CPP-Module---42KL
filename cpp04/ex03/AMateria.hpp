@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/08 17:19:37 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/10 20:05:26 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
-class Cat : virtual public Animal{
-private:
-	Brain *brain;
+class AMateria{
+protected:
+	std::string	type;
 public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
+	AMateria();
+	virtual ~AMateria();
+	AMateria(std::string const & type);
+	AMateria(const AMateria &copy);
+	AMateria& operator=(const AMateria &copy);
+	
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
 
 #endif

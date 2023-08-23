@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/08/22 15:58:13 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/08/22 16:35:54 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AForm.hpp"
 
-class Cat : virtual public Animal{
+class RobotomyRequestForm : public Form{
 private:
-	Brain *brain;
+	std::string 	target;
 public:
-	Cat();
-	~Cat();
+	RobotomyRequestForm();
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(const RobotomyRequestForm &copy);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm &copy);
+	~RobotomyRequestForm();
 
-	virtual void	makeSound() const;
+	void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

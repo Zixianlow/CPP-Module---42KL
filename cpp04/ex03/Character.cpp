@@ -1,29 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/10 21:05:51 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/10 21:05:52 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : virtual public Animal{
-private:
-	Brain *brain;
-public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
-};
-
-#endif

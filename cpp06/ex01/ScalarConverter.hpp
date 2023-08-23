@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/08/19 19:23:07 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/08/23 18:18:34 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <iomanip>
 
-class Cat : virtual public Animal{
-private:
-	Brain *brain;
+class ScalarConverter{
 public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
+	static void convert(std::string str);
 };
 
 #endif

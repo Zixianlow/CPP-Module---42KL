@@ -5,14 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/23 19:34:04 by lzi-xian          #+#    #+#              #
-#    Updated: 2023/05/17 16:20:32 by lzi-xian         ###   ########.fr        #
+#    Created: 2023/05/05 16:27:40 by lzi-xian          #+#    #+#              #
+#    Updated: 2023/08/23 16:33:56 by lzi-xian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
+NAME		=	form
 OBJS_DIR    =   objs/
-MAN_FILES	=	megaphone
+MAN_FILES	=	Bureaucrat	\
+				Intern		\
+				ShrubberyCreationForm	\
+				RobotomyRequestForm		\
+				PresidentialPardonForm	\
+				AForm		\
+				main
 SRCS        =	$(addsuffix .cpp, $(MAN_FILES))
 OBJS 		=	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(MAN_FILES)))
 RMRF		=	rm -rf

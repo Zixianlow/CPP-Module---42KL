@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:25:10 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/06 21:19:10 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:18:13 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,4 @@ Cat::~Cat()
 void	Cat::makeSound() const
 {
 	std::cout << "Animal making sound, Meowwww~~~" << std::endl;
-}
-
-std::string Animal::getType() const{
-	return this->type;
 }

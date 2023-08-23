@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/05/10 20:56:26 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/05/10 21:05:35 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cat : virtual public Animal{
+class Character{
 private:
-	Brain *brain;
+	std::string name;
+	AMateria *inventor[4];
 public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
+	Character();
+	~Character();
+	Character(Character const & copy);
+	Character& operator=(Character const & copy);
+	
+	void	equip(AMateria* mat);
+	void	unequip(int i);
+	void	use(int i, ICharacter &target);
+	std::string const & getName() const;
 };
 
 #endif

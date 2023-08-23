@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/08 15:04:03 by lzi-xian         ###   ########.fr       */
+/*   Created: 2023/08/19 20:42:09 by lzi-xian          #+#    #+#             */
+/*   Updated: 2023/08/20 13:41:42 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Bureaucrat.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+int main()
+{
+	Bureaucrat bureau("Bureau", 1);
+	Bureaucrat crat("Crat", 150);
 
-class Cat : virtual public Animal{
-private:
-	Brain *brain;
-public:
-	Cat();
-	~Cat();
-
-	virtual void	makeSound() const;
-};
-
-#endif
+	try {
+		std::cout << bureau << std::endl;
+		bureau.gradeIncrement();
+	}
+	catch (Bureaucrat::GradeTooHigh &e){
+		std::cout << e.what() << std::endl;
+	}
+	
+	try {
+		std::cout << crat << std::endl;
+		crat.gradeDecrement();
+	}
+	catch (Bureaucrat::GradeTooLow &e){
+		std::cout << e.what() << std::endl;
+	}
+}
