@@ -6,13 +6,13 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:58:56 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 16:35:36 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:19:28 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy", 72, 45){
+RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy", 72, 45), target(""){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Robotomy", 72, 45), target(target){
@@ -23,6 +23,9 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy){
+	if (this != &copy){
+		this->target = copy.target;
+	}
 	return *this;
 }
 
@@ -35,5 +38,19 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 	}
 	if (executor.getGrade() > this->getGradeExecute()){
 		throw Form::GradeTooLow();
+	}
+}
+
+void	RobotomyRequestForm::action() const{
+	int	i;
+
+	srand(time(NULL));
+	i = rand() % 2;
+	if (i){
+		std::cout << "This is a recording of drilling noises!!!" << std::endl;
+		std::cout << this->target << " has been robotomized." << std::endl;
+	}
+	else{
+		std::cout << "Robotomy on " << this->target << " failed." << std::endl;
 	}
 }

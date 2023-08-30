@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:02:17 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 16:35:51 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:29:51 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~ShrubberyCreationForm();
 
 	void	execute(Bureaucrat const &executor) const;
+	void	action() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:23:07 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 16:49:06 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:51:02 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "AForm.hpp"
 
 class Form;

@@ -6,18 +6,30 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 20:42:09 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 19:37:34 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:25:14 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char **av)
+struct Data{
+	int	data;
+};
+
+int main(void)
 {
-	if (ac != 2){
-		std::cout << "Invalid argument count!!!" << std::endl;
-		return (1);
-	}
-	ScalarConverter::convert(av[1]);
+	Data* data = new Data;
+	uintptr_t raw;
+	Data* rawdata;
+	uintptr_t dataraw;
+	
+	data->data = 12;
+	std::cout << "Data1: " << data->data << std::endl;
+	raw = Serializer::serialize(data);
+	std::cout << "Data2: " << raw << std::endl;
+	rawdata = Serializer::deserialize(raw);
+	std::cout << "Data3: " << rawdata->data << std::endl;
+	dataraw = Serializer::serialize(rawdata);
+	std::cout << "Data4: " << dataraw << std::endl;
 	return (0);
 }

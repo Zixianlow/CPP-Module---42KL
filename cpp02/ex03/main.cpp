@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:01:11 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/27 18:13:53 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:03:53 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
 }
 
 int main ( void ) {
-    if ( bsp( Point(0, 0), Point(10, 30), Point(20, 0), Point(30, 15) ) == true ) {
+    if ( bsp( Point(0, 0), Point(10, 30), Point(20, 0), Point(10, 15) ) == true ) {
         std::cout << "Point is in the triangle" << std::endl;
     } else {
         std::cout << "Point is not in the triangle" << std::endl;

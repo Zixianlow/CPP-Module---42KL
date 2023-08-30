@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 20:42:09 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 15:19:24 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:31:02 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 
 int main()
 {
-	Bureaucrat bureau("bureau", 55);
-	ShrubberyCreationForm Shrubbery("Home");
-	PresidentialPardonForm Presidential("Home");
-	RobotomyRequestForm Robotomy("Home");
+	Bureaucrat bureau("bureau", 46);
+	Bureaucrat bureau2("bureau2", 3);
+	ShrubberyCreationForm Shrubbery("Shru");
+	PresidentialPardonForm Presidential("Pres");
+	RobotomyRequestForm Robotomy("Robo");
 	Form* form;
 
 	form = &Shrubbery;
@@ -31,6 +32,7 @@ int main()
 	try{
 		bureau.signForm(Shrubbery);
 		bureau.executeForm(Shrubbery);
+		bureau.signForm(Shrubbery);
 	}
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;
@@ -42,8 +44,22 @@ int main()
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
+	bureau.gradeIncrement();
 	try{
-		bureau.executeForm(Presidential);
+		bureau.executeForm(Robotomy);
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	try{
+		bureau2.executeForm(Presidential);
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	try{
+		bureau2.signForm(Presidential);
+		bureau2.executeForm(Presidential);
 	}
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;

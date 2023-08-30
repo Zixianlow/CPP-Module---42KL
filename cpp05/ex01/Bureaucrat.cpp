@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:26:49 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/20 13:44:34 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:17:28 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy){
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy){
 	if (this != &copy){
 		this->name = copy.name;
+		this->grade = copy.grade;
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:02:17 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 16:49:15 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:44:41 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 
 	void	beSigned(const Bureaucrat &copy);
 	virtual void execute(Bureaucrat const &executor) const = 0;
+	virtual void action() const = 0;
 	
 	class	GradeTooLow : public std::exception
 	{
@@ -61,6 +62,15 @@ public:
 			virtual const char* what() const throw() 
 			{
 				return "Form not signed!!!";
+			}
+	};
+
+	class	FormAlreadySign : public std::exception
+	{
+		public:
+			virtual const char* what() const throw() 
+			{
+				return "Form is already signed!!!";
 			}
 	};
 };

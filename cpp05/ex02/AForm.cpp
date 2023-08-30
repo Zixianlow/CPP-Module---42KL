@@ -6,13 +6,13 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:01:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 15:36:38 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:29:16 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-Form::Form(std::string name, int gradeSign, int gradeExecute) : name(name), gradeSign(gradeSign), gradeExecute(gradeExecute)
+Form::Form(std::string name, int gradeSign, int gradeExecute) : name(name), sign(false), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
 	if (gradeSign < 1 || gradeExecute < 1){
 		throw Form::GradeTooHigh();
@@ -22,7 +22,7 @@ Form::Form(std::string name, int gradeSign, int gradeExecute) : name(name), grad
 	}
 }
 
-Form::Form(const Form &copy) : name(copy.getName()), gradeSign(copy.getGradeSign()), gradeExecute(copy.getGradeExecute())
+Form::Form(const Form &copy) : name(copy.getName()), sign(copy.getSigned()), gradeSign(copy.getGradeSign()), gradeExecute(copy.getGradeExecute())
 {
 	*this = copy;
 }
@@ -57,6 +57,9 @@ void	Form::beSigned(const Bureaucrat &copy){
 	if (copy.getGrade() > gradeSign){
 		throw Form::GradeTooLow();
 	}
+	if (this->sign == true){
+		throw Form::FormAlreadySign();
+	}	
 	sign = true;
 }
 

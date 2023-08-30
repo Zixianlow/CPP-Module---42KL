@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:26:49 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 19:54:05 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:23:02 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ void ScalarConverter::convert(std::string str){
 	dot = 0;
 	err = 0;
 	a = 0;
+	s = (char *)str.c_str();
 	l = str.length();
 	while (i < l){
-		if (i == 0 && s[i] == '+' || s[i] == '-'){
+		if ((i == 0 && s[i] == '+') || s[i] == '-'){
 			i++;
 			a++;
 		}

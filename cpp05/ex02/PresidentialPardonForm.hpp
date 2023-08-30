@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:59:53 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 16:35:56 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:46:31 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~PresidentialPardonForm();
 
 	void	execute(Bureaucrat const &executor) const;
+	void	action() const;
 };
 
 #endif

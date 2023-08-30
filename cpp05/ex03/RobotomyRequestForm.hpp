@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:58:13 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 16:35:54 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:33:22 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~RobotomyRequestForm();
 
 	void	execute(Bureaucrat const &executor) const;
+	void	action() const;
 };
 
 #endif

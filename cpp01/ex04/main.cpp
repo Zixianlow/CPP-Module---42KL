@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:14:06 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/25 17:42:31 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:56:19 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_find_n_replace(std::string &line, std::string find, std::string replace)
 {
-	size_t pos = line.find(find, pos);
+	size_t pos = 0;
+	pos = line.find(find, pos);
 	while (pos != std::string::npos)
 	{
 		line.erase(pos, find.length());

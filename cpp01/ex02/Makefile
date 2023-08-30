@@ -6,7 +6,7 @@
 #    By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 13:32:07 by lzi-xian          #+#    #+#              #
-#    Updated: 2023/04/22 13:40:22 by lzi-xian         ###   ########.fr        #
+#    Updated: 2023/08/30 17:45:13 by lzi-xian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS        =	$(addsuffix .cpp, $(MAN_FILES))
 OBJS 		=	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(MAN_FILES)))
 RMRF		=	rm -rf
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
-GCC			=	g++
+GCC			=	c++
 
 all:
 	@mkdir -p $(OBJS_DIR)

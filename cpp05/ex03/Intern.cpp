@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:26:59 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/23 17:08:49 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:34:01 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Intern::Intern(const Intern &copy){
 }
 
 Intern& Intern::operator=(const Intern &copy){
+	(void)copy;
 	return *this;
 }
 
@@ -36,7 +37,7 @@ Form*	Intern::makeForm(std::string name, std::string target){
 	int	i = 0;
 	while (i < 3){
 		if (!name.compare(nameset[i])){
-			std::cout << "Intern creats " << name << " form." << std::endl;
+			std::cout << "Intern creates " << name << " form." << std::endl;
 			return form[i];
 		}
 		i++;

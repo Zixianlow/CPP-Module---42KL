@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:26:49 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 16:16:48 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:17:36 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy){
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy){
 	if (this != &copy){
 		this->name = copy.name;
+		this->grade = copy.grade;
 	}
 	return *this;
 }
@@ -66,18 +67,21 @@ void	Bureaucrat::signForm(Form &form){
 	catch(Form::GradeTooLow &e){
 		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
+	catch(Form::FormAlreadySign &e){
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::executeForm(Form const &form){
 	try{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		form.action();
 	}
 	catch(Form::GradeTooLow &e){
 		std::cout << this->getName() << " couldn't executed " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
-
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& copy){
 	stream << copy.getName() << ", bureaucrat grade " << copy.getGrade();

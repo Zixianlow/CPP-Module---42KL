@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:02:13 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/27 18:25:16 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:46:27 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Fixed::Fixed(const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
-	// operator=(copy);
 }
 
 Fixed& Fixed::operator=(const Fixed& copy)
