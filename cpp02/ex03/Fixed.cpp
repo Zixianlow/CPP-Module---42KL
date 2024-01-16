@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:02:13 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:04:14 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:11:33 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ Fixed&	Fixed::operator++(void)
 
 Fixed&	Fixed::operator--(void)
 {
-	this->fixedPointValue++;
+	this->fixedPointValue--;
 	return *this;
 }
 

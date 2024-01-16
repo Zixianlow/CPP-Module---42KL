@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:02:13 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/27 18:37:33 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:33:21 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ Fixed	Fixed::operator*(const Fixed &copy) const
 
 Fixed	Fixed::operator/(const Fixed &copy) const
 {
+    if (copy.toFloat() == 0.0f)
+    {
+        std::cout << "Division by 0 is not allow to number ";
+        return Fixed (this->toFloat());
+    }
 	return Fixed (this->toFloat() / copy.toFloat());
 }
 
@@ -101,7 +106,7 @@ Fixed&	Fixed::operator++(void)
 
 Fixed&	Fixed::operator--(void)
 {
-	this->fixedPointValue++;
+	this->fixedPointValue--;
 	return *this;
 }
 

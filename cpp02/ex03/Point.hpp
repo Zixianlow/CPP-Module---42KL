@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 17:36:48 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/27 18:16:36 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:20:08 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ public:
 	Fixed getX(void) const;
 	Fixed getY(void) const;
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
