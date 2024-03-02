@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:28:21 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:12:39 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:06:25 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 class Dog : public Animal{
 public:
 	Dog();
+    Dog(const Dog &copy);
+	Dog& operator=(const Dog &copy);
 	~Dog();
 
 	void	makeSound() const;

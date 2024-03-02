@@ -6,12 +6,12 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 16:10:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/26 17:03:46 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:09:42 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_TPP
-#define ARRAY_TPP
+#ifndef ARRAY_CPP
+#define ARRAY_CPP
 
 #include "Array.hpp"
 

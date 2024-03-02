@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 15:55:56 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/29 16:25:29 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:57:58 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 
-template<typename T, typename U>
-void iter(T *array, U size, void(*f)(T &)){
+template<typename T>
+void iter(T *array, size_t size, void(*f)(T &)){
 	int i = 0;
 
 	while (i < size){

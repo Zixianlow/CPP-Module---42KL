@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:54:47 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/28 20:50:45 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:09:08 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 	unsigned int 	energy;
 	unsigned int	dmg;
 public:
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &copy);
 	ClapTrap& operator=(const ClapTrap &copy);

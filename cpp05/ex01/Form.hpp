@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:02:17 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/22 14:58:26 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:53:29 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 
 	void	beSigned(const Bureaucrat &copy);
 	
-	class	GradeTooLow : public std::exception
+	class	GradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
@@ -45,7 +45,7 @@ public:
 			}
 	};
 
-	class	GradeTooHigh : public std::exception
+	class	GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw() 

@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:02:17 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/29 17:44:41 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:06:53 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	virtual void execute(Bureaucrat const &executor) const = 0;
 	virtual void action() const = 0;
 	
-	class	GradeTooLow : public std::exception
+	class	GradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
@@ -47,7 +47,7 @@ public:
 			}
 	};
 
-	class	GradeTooHigh : public std::exception
+	class	GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw() 

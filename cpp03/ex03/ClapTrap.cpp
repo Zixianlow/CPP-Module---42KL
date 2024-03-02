@@ -6,11 +6,20 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:55:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/28 20:58:38 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:12:47 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "A wild nameless ClapTrap spawned." << std::endl;
+	this->name = "nameless";
+	this->hp = 10;
+	this->energy = 10;
+	this->dmg = 0;
+}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -46,10 +55,14 @@ ClapTrap::~ClapTrap()
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->hp == 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is already dead.";
+		std::cout << std::endl;
 		return ;
+	}
 	if (this->energy <= 0)
 	{
-		std::cout << "ClapTrap " << this->name << " is out of energy.";
+		std::cout << "ClapTrap " << this->name << " is out of energy." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->name << " attacks ";
@@ -86,14 +99,18 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->hp == 0)
-		return ;
-	if (this->energy == 0)
 	{
-		std::cout << "ClapTrap " << this->name << " is out of energy.";
+		std::cout << "ClapTrap " << this->name << " is already dead.";
+		std::cout << std::endl;
+		return ;
+	}
+	if (this->energy <= 0)
+	{
+		std::cout << "ClapTrap " << this->name << " is out of energy." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->name << " repairs itself, ";
-	std::cout << " recovered " << amount << " of hit points.";
+	std::cout << "recovered " << amount << " of hit points.";
 	std::cout << std::endl;
 	this->energy--;
 	this->hp += amount;

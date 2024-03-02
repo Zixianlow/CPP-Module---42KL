@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:23:07 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/26 15:46:51 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:42:31 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ public:
 class A : public Base{};
 class B : public Base{};
 class C : public Base{};
-class D : public Base{};
 
 Base* generate(void);
 void identity(Base* p);

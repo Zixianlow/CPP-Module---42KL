@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:26:49 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 16:23:02 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:16:58 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,27 @@ void ScalarConverter::convert(std::string str){
 	a = 0;
 	s = (char *)str.c_str();
 	l = str.length();
+    if (!str.compare("nan") || !str.compare("nanf")){
+        std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
+        std::cout << "float : nanf" << std::endl;
+        std::cout << "double : nan" << std::endl;
+        return ;
+    }
+	else if (!str.compare("-inf") || !str.compare("-inff")){
+        std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
+        std::cout << "float : -inff" << std::endl;
+        std::cout << "double : -inf" << std::endl;
+        return ;
+    }
+	else if (!str.compare("+inf") || !str.compare("+inff")){
+        std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
+        std::cout << "float : +inff" << std::endl;
+        std::cout << "double : +inf" << std::endl;
+        return ;
+    }
 	while (i < l){
 		if ((i == 0 && s[i] == '+') || s[i] == '-'){
 			i++;

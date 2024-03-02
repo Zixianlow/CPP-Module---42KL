@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:44:56 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/06 14:11:41 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:20:12 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,17 @@ public:
 	virtual ~WrongAnimal();
 	
 	std::string getType() const;
-	virtual void	makeSound() const;
+	void	makeSound() const;
+};
+
+class WrongCat : public WrongAnimal{
+public:
+	WrongCat();
+    WrongCat(const WrongCat &copy);
+	WrongCat& operator=(const WrongCat &copy);
+	~WrongCat();
+
+	void	makeSound() const;
 };
 
 #endif

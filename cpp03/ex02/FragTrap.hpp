@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 21:11:31 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/28 21:14:47 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:18:39 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap{
-private:
-	FragTrap();
 public:
 	FragTrap(std::string name);
+    FragTrap();
+	FragTrap(const FragTrap &copy);
+	FragTrap& operator=(const FragTrap &copy);
 	~FragTrap();
 	
 	void	highFivesGuys(void);

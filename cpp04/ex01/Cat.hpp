@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:14:02 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/05/06 13:44:42 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:42:13 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 
 class Cat : public Animal{
 private:
-	Brain *brain;
+    Brain *brain;
 public:
 	Cat();
+    Cat(const Cat &copy);
+	Cat& operator=(const Cat &copy);
 	~Cat();
 
 	void	makeSound() const;
+    Brain* getBrain() const { return this->brain; } 
 };
 
 #endif

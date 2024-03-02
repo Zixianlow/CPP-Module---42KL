@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 20:42:09 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:22:26 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:56:05 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int main(void)
     ::iter(name, 3, print);
 	std::cout << std::endl;
 	std::cout << "The string array:" << std::endl;
-	::iter(strings, 3, print);
+	::iter(strings, 2, print);
 	std::cout << std::endl;
 }

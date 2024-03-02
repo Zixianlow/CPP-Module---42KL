@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:23:07 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/29 17:44:44 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:07:15 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
 	void	signForm(Form &form);
 	void	executeForm(Form const &form);
 
-	class	GradeTooLow : public std::exception
+	class	GradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
@@ -49,7 +49,7 @@ public:
 			}
 	};
 
-	class	GradeTooHigh : public std::exception
+	class	GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw() 

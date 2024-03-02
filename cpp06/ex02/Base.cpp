@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 19:26:49 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 19:20:52 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 20:02:39 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ Base::~Base(){
 }
 
 Base* generate(void){
-	int i = rand() % 3;
+    std::srand(std::time(0));
+	int i = std::rand() % 3;
 	
 	if (i == 0){
 		std::cout << "New Base A created." << std::endl;

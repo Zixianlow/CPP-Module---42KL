@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:01:33 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 16:29:16 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:06:02 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 Form::Form(std::string name, int gradeSign, int gradeExecute) : name(name), sign(false), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
 	if (gradeSign < 1 || gradeExecute < 1){
-		throw Form::GradeTooHigh();
+		throw Form::GradeTooHighException();
 	}
 	if (gradeSign > 150 || gradeExecute > 150){
-		throw Form::GradeTooLow();
+		throw Form::GradeTooLowException();
 	}
 }
 
@@ -55,7 +55,7 @@ int	Form::getGradeExecute() const{
 
 void	Form::beSigned(const Bureaucrat &copy){
 	if (copy.getGrade() > gradeSign){
-		throw Form::GradeTooLow();
+		throw Form::GradeTooLowException();
 	}
 	if (this->sign == true){
 		throw Form::FormAlreadySign();

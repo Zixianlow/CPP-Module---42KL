@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:00:41 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:18:14 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:12:02 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
 	}
 	if (executor.getGrade() > this->getGradeExecute())
 	{
-		throw Form::GradeTooLow();
+		throw Form::GradeTooLowException();
 	}	
 }
 

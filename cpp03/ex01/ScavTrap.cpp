@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:52:37 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/28 21:10:24 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:16:52 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,33 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->dmg = 20;
 
 	std::cout << "A wild ScavTrap " << this->name << " spawned." << std::endl;
+}
+
+ScavTrap::ScavTrap()
+{
+	std::cout << "A wild nameless ScavTrap spawned." << std::endl;
+	this->name = "nameless";
+	this->hp = 10;
+	this->energy = 10;
+	this->dmg = 0;
+}
+
+
+ScavTrap::ScavTrap(const ScavTrap &copy)
+{
+	*this = copy;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
+{
+	if (this != &copy)
+	{
+		this->name = copy.name;
+		this->hp = copy.hp;
+		this->energy = copy.energy;
+		this->dmg = copy.dmg;
+	}
+	return *this;
 }
 
 ScavTrap::~ScavTrap()

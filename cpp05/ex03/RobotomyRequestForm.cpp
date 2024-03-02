@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:58:56 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:19:28 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:23:51 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 		throw Form::FormNotSigned();
 	}
 	if (executor.getGrade() > this->getGradeExecute()){
-		throw Form::GradeTooLow();
+		throw Form::GradeTooLowException();
 	}
 }
 
@@ -46,9 +46,9 @@ void	RobotomyRequestForm::action() const{
 
 	srand(time(NULL));
 	i = rand() % 2;
+    std::cout << "This is a recording of drilling noises!!!" << std::endl;
 	if (i){
 		std::cout << "This is a recording of drilling noises!!!" << std::endl;
-		std::cout << this->target << " has been robotomized." << std::endl;
 	}
 	else{
 		std::cout << "Robotomy on " << this->target << " failed." << std::endl;

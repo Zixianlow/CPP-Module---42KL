@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:36:27 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:19:30 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:15:04 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
 		throw Form::FormNotSigned();
 	}
 	if (executor.getGrade() > this->getGradeExecute()){
-		throw Form::GradeTooLow();
+		throw Form::GradeTooLowException();
 	}
 }
 

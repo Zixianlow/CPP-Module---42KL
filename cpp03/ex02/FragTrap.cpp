@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 21:11:18 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/04/28 21:15:37 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:19:11 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,32 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->dmg = 30;
 
 	std::cout << "A wild FragTrap " << this->name << " spawned." << std::endl;
+}
+
+FragTrap::FragTrap()
+{
+	std::cout << "A wild nameless ScavTrap spawned." << std::endl;
+	this->name = "nameless";
+	this->hp = 10;
+	this->energy = 10;
+	this->dmg = 0;
+}
+
+FragTrap::FragTrap(const FragTrap &copy)
+{
+	*this = copy;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap &copy)
+{
+	if (this != &copy)
+	{
+		this->name = copy.name;
+		this->hp = copy.hp;
+		this->energy = copy.energy;
+		this->dmg = copy.dmg;
+	}
+	return *this;
 }
 
 FragTrap::~FragTrap()

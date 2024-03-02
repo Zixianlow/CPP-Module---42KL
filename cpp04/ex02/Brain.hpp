@@ -6,7 +6,7 @@
 /*   By: lzi-xian <lzi-xian@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:21:38 by lzi-xian          #+#    #+#             */
-/*   Updated: 2023/08/30 17:14:39 by lzi-xian         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:58:54 by lzi-xian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ public:
 	Brain(const Brain &copy);
 	Brain& operator=(const Brain &copy);
 	~Brain();
+    
+    std::string getIdeas(int i) { return this->ideas[i]; }
+    void    setIdeas(int i, std::string str) { this->ideas[i] = str; }
 };
 
 #endif
